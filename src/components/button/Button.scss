@@ -1,0 +1,49 @@
+.personalized-button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 15px 40px;
+  color: white;
+  background-color: brown;
+  border-radius: 25px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    border: none;
+  }
+
+  &:disabled {
+    background-color: #f2f2f2;
+    color: #c7c7c7;
+    cursor: not-allowed;
+  }
+
+  &.sm {
+    padding: 7px 15px;
+    font-size: 0.8rem;
+  }
+
+  &.md {
+    font-size: 1rem;
+    padding: 10px 60px 10px 60px;
+  }
+
+  &.lg {
+    padding: 15px 60px !important;
+    font-size: 1.1rem;
+  }
+
+  &.link {
+    border: none;
+    color: #848484;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+}

@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+PROJETO PIZZA REACT
+Dependências e infos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+yarn init -y - Cria o package.json com as informações que já tem
 
-## Available Scripts
+yarn add express
+yarn add @types/express -D - apenas para o ambiente de desenvolvimento -D
+yarn add typescript -D
+yarn add ts-node-dev -D - converte o js em tempo de execução
+yarn add typeorm reflect-metadata - gerenciar banco de dados (mysql, postgresql etc)
+yarn add sqlite3
+yarn add uuid
+yarn add @types/uuid -D
 
-In the project directory, you can run:
+yarn tsc --init
+gerar o arquivo tsconfig.json e dentro dele{
+strict: false
+descomentar:
+"experimentalDecorators": true,
+"emitDecoratorMetadata": true,
+"strictPropertyInitialization": false,
+}
 
-### `yarn start`
+dentro de package.json inserir {
+"scripts": {
+"dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
+},
+} com isso o projeto roda com yarn dev
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+depois de instalar o typeorm colocar em package.json
+"scripts": {
+"dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
+"typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+},
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+yarn typeorm migration:create -n CreateUsers - migration para criar as tabelas
+yarn typeorm migration:run - para rodar o migration
+yarn typeorm migration:create -n CreateSurveys
+yarn typeorm migration:run
 
-### `yarn test`
+yarn add jest @types/jest -D - para fazer testes
+yarn jest --init {
+1-running test in package.json? Yes
+2-use Typescript in configuration file? Yes
+3-choose the test environment: node
+4-Jest coverage reports? no
+5-provider instrument code for coverage? v8
+6-Automatically clear mock every test? yes
+}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+jest {
+bail: true - assegura que se ocorrer um bug ele nao passará para o outro
+//testEnvironment: "node",
+testMatch: ["**/__tests__/*.test.ts"] - pasta onde ira executar os testes
+preset: "ts-jest",
+} package.json {
+"test": "NODE_ENV=test jest -i" - no Windows se nao funcionar usar "set NODE_ENV=test jest"
 
-### `yarn build`
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+yarn add ts-jest -D
+yarn add supertest @types/supertest -D
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+yarn typeorm migration:create -n CreateSurveysUsers
+yarn add nodemailer
+yarn add @types/nodemailer -D
+yarn add handlebars - templates customizados html
+yarn add yup - para validação

@@ -1,0 +1,12 @@
+* {
+  background-color: #33ccff;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+#home {
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
