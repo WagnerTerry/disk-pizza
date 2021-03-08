@@ -1,12 +1,33 @@
 * {
   background-color: #33ccff;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 0 5px;
 }
 
 #home {
   .buttons {
     display: flex;
     justify-content: space-between;
+    padding: 0 100px;
+
+    button {
+      background-color: gold;
+      height: 40px;
+      width: 170px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  #home {
+    .buttons {
+      padding: 0;
+
+      button {
+        height: 40px;
+        width: 90px;
+      }
+    }
   }
 }

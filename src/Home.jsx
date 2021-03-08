@@ -1,20 +1,20 @@
 import React from "react";
-import Button from "./components/button/Button";
+// import Button from "./components/button/Button";
 import "./Home.scss";
 function Home() {
   return (
     <div id="home">
-      <h1>Disk Pizza Califórnia</h1>
+      <h2>Disk Pizza Califórnia</h2>
       <div className={"buttons"}>
-        <Button fontSize={10} size={"sm"} onClick={() => console.log("oi")}>
+        <button fontSize={10} size={"sm"} onClick={() => console.log("oi")}>
           Cadastro de Cliente
-        </Button>
-        <Button fontSize={10} size={"sm"} onClick={() => console.log("oi")}>
+        </button>
+        <button fontSize={10} size={"sm"} onClick={() => console.log("oi")}>
           Cardápio
-        </Button>
-        <Button fontSize={10} size={"sm"} onClick={() => console.log("oi")}>
+        </button>
+        <button fontSize={10} size={"sm"} onClick={() => console.log("oi")}>
           Caixa
-        </Button>
+        </button>
         {/* <button>Cadastro de Cliente</button>
         <button>Cardápio</button>
         <button>Caixa</button> */}
