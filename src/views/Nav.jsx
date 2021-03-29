@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.scss";
 import { Link } from "react-router-dom";
-// import Logo from "../assets/logo.png";
 
 function Nav() {
   return (
     <nav>
-      {/* <img src={Logo} alt="logo" className="logo" /> */}
-      <h3>Disk Pizza Califórnia</h3>
+      <Link className="navLogo" to="/">
+        <h3>Disk Pizza Califórnia</h3>
+      </Link>
       <ul className="nav-links">
-        <Link className="navStyle" to="/">
+        <Link className="navStyle" to="/cadastrocliente">
           <li>Cadastro</li>
         </Link>
         <Link className="navStyle" to="/caixa">
