@@ -4,7 +4,7 @@
   padding: 0 5px;
 }
 
-#home {
+#app {
   text-align: center;
   font-size: 22px;
   .buttons {
@@ -22,7 +22,7 @@
 }
 
 @media (max-width: 400px) {
-  #home {
+  #app {
     .buttons {
       padding: 0;
 

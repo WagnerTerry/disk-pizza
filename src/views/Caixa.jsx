@@ -6,7 +6,7 @@ class CadastroCliente extends React.Component {
   // }
 
   render() {
-    return <div>ola mundo</div>;
+    return <div>Caixa</div>;
   }
 }
 
