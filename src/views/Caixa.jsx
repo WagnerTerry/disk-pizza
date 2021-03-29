@@ -1,6 +1,6 @@
 import React from "react";
 
-class CadastroCliente extends React.Component {
+class Caixa extends React.Component {
   // constructor() {
   //   super();
   // }
@@ -10,4 +10,4 @@ class CadastroCliente extends React.Component {
   }
 }
 
-export default CadastroCliente;
+export default Caixa;

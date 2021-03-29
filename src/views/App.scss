@@ -1,12 +1,12 @@
 * {
-  background-color: #33ccff;
+  // background-color: #33ccff;
   box-sizing: border-box;
-  padding: 0 5px;
+  // padding: 0 5px;
 }
 
 #app {
   text-align: center;
-  font-size: 22px;
+  // font-size: 22px;
   .buttons {
     display: flex;
     justify-content: space-between;
@@ -18,6 +18,32 @@
       width: 170px;
       cursor: pointer;
     }
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background: rgb(73, 79, 82);
+    color: white;
+  }
+
+  .nav-links {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+
+  .navStyle {
+    color: white;
+  }
+
+  img {
+    width: 12%;
+    height: 90px;
   }
 }
 

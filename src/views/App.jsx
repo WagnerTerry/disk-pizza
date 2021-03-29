@@ -1,6 +1,8 @@
 import React from "react";
 import CadastroCliente from "./CadastroCliente";
 import Caixa from "./Caixa";
+import Cardapio from "./Cardapio";
+import Nav from "./Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Button from "./components/button/Button";
 import "../views/App.scss";
@@ -8,9 +10,11 @@ function App() {
   return (
     <Router>
       <div id="app">
+        <Nav />
         <Switch>
-          <Route path="/" exact component={Caixa} />
-          <Route path="/cadastroCliente" exact component={CadastroCliente} />
+          <Route path="/" exact component={CadastroCliente} />
+          <Route path="/caixa" exact component={Caixa} />
+          <Route path="/cardapio" exact component={Cardapio} />
         </Switch>
       </div>
     </Router>

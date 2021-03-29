@@ -6,7 +6,7 @@ class Cardapio extends React.Component {
   // }
 
   render() {
-    return <div>Caixa</div>;
+    return <div>Cardapio</div>;
   }
 }
 
