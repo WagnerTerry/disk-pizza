@@ -1,0 +1,52 @@
+#cadastro-cliente {
+  // * {
+  //   margin: 0;
+  //   padding: 0;
+  // }
+
+  input,
+  button {
+    border-radius: 5px;
+  }
+
+  form {
+    // background-color: green;
+  }
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    button {
+      margin-right: 20px;
+      font-size: 16px;
+      width: 110px;
+      cursor: pointer;
+    }
+  }
+
+  main {
+    margin-top: 30px;
+    // display: flex;
+    // flex-direction: column;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    input {
+      height: 30px;
+      padding-left: 10px;
+      margin: 10px 0;
+      margin-right: 40px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+  }
+}
