@@ -61,6 +61,10 @@ class CadastroCliente extends React.Component {
               <label htmlFor="cidade">Cidade: </label>
               <input type="text" id="cidade" name="cidade" size="40" />
             </div>
+            <div>
+              <label htmlFor="obs">Observações: </label>
+              <textarea name="obs" cols="50" rows="3"></textarea>
+            </div>
           </main>
         </form>
       </div>
