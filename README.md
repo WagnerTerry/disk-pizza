@@ -11,6 +11,7 @@ yarn add typeorm reflect-metadata - gerenciar banco de dados (mysql, postgresql 
 yarn add sqlite3
 yarn add uuid
 yarn add @types/uuid -D
+yarn add axios
 
 yarn tsc --init
 gerar o arquivo tsconfig.json e dentro dele{
