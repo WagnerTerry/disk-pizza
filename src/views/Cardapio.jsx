@@ -7,39 +7,37 @@ class Cardapio extends React.Component {
     super();
     this.state = {
       disk_pizza: [],
+      refrigerantes: [],
+      pizzas: [],
     };
   }
 
   buscaPizza = async () => {
     const response = await api.get("");
-    // console.log("oba", response.data);
-    console.log("res", response);
+    const pizzas = response.data.pizzas;
+    const refrigerantes = response.data.refrigerantes;
+
     this.setState({
       disk_pizza: response.data,
+      pizzas: pizzas,
+      refrigerantes: refrigerantes,
     });
+
+    console.log("pizza", pizzas);
+    console.log("refri", refrigerantes);
+
+    // const teste = pizzas[0].map((pizza) => {
+    //   return pizza;
+    // });
+    // console.log("teste", teste);
   };
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.buscaPizza();
-  }
+  };
 
   render() {
-    return (
-      <div>
-        Cardapio
-        {console.log("apu", this.state.disk_pizza)}
-        {/* <>
-          {this.state.disk_pizza.map((pizza) => {
-            return (
-              <>
-                <h1>legal</h1>
-                <p>{pizza.tradicionais}</p>
-              </>
-            );
-          })}
-        </> */}
-      </div>
-    );
+    return <div>Cardapio</div>;
   }
 }
 
