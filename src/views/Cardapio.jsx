@@ -1,6 +1,5 @@
 import React from "react";
 import api from "../services/api";
-// import { GetStaticProps } from "next";
 
 class Cardapio extends React.Component {
   constructor() {
@@ -23,9 +22,6 @@ class Cardapio extends React.Component {
       refrigerantes: refrigerantes,
     });
 
-    console.log("pizza", pizzas);
-    console.log("refri", refrigerantes);
-
     // const teste = pizzas[0].map((pizza) => {
     //   return pizza;
     // });
@@ -37,7 +33,20 @@ class Cardapio extends React.Component {
   };
 
   render() {
-    return <div>Cardapio</div>;
+    return (
+      <div>
+        <h1>Cardapio</h1>
+
+        <h2>Refrigerante Grátis</h2>
+        {this.state.refrigerantes.map((refri) => {
+          return (
+            <h3 key={refri.codigo_refri}>
+              Tamanho : {refri.tamanho} - litros: {refri.litro}
+            </h3>
+          );
+        })}
+      </div>
+    );
   }
 }
 
