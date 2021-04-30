@@ -22,10 +22,11 @@ class Cardapio extends React.Component {
       refrigerantes: refrigerantes,
     });
 
-    // const teste = pizzas[0].map((pizza) => {
-    //   return pizza;
-    // });
-    // console.log("teste", teste);
+  /*   pizzas[0].tradicionais[0].sabores.map((piz) => {
+      return <h2>{console.log("asa",piz.nome, piz.codigo_pizza)}</h2>
+    }) */
+
+  
   };
 
   componentDidMount = () => {
