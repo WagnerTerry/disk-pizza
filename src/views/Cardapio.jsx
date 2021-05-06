@@ -39,14 +39,34 @@ class Cardapio extends React.Component {
 
   render() {
     // const grupos = this.state.pizzas.filter((g) => g.grupo === "ESPECIAIS");
-    const gr = this.state.grupos[0];
-    console.log("s", gr);
     return (
       <div id={"cardapio"}>
         <h1>Cardapio</h1>
         <h2>Pizzas</h2>
 
-        <h2>Tradicionais </h2>
+        {this.state.grupos.map((grupo, i) => {
+          return (
+            <div key={i}>
+              <h2>{grupo.grupo} </h2>
+              {this.state.pizzas.map((pizza, a) => {
+                return (
+                  <div key={a}>
+                    {pizza.grupo === grupo.grupo && <h3>{pizza.nome}</h3>}
+                  </div>
+                );
+              })}
+              <h4>
+                Pequena R$ {grupo.preco_pequena} | Grande R${" "}
+                {grupo.preco_grande} | Família R$ {grupo.preco_familia}{" "}
+                {grupo.preco_gigante
+                  ? `| Gigante R$ ${grupo.preco_gigante}`
+                  : ""}
+              </h4>
+            </div>
+          );
+        })}
+
+        {/* <h2>Tradicionais </h2>
         {this.state.pizzas.map((pizza) => {
           return (
             pizza.grupo === "TRADICIONAIS" && (
@@ -65,13 +85,13 @@ class Cardapio extends React.Component {
               </div>
             )
           );
-        })}
+        })} */}
 
         <h2>Refrigerante Grátis</h2>
         {this.state.refrigerantes.map((refri) => {
           return (
             <h3 key={refri.codigo_refri}>
-              Tamanho : {refri.tamanho} - {refri.litro} litros:
+              Tamanho : {refri.tamanho} - {refri.litro} litros
             </h3>
           );
         })}
