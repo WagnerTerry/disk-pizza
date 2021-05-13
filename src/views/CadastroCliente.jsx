@@ -1,16 +1,17 @@
 import React from "react";
+import { Formik, Field, Form } from "formik";
 import "./CadastroCliente.scss";
-
-// const [values, setValues] = useState({
-//   name: "",
-// });
 
 class CadastroCliente extends React.Component {
   // constructor() {
   //   super();
   // }
 
-  onBlurCep = (e) => {
+  onSubmit = (values, actions) => {
+    console.log("Submit", values);
+  };
+
+  onBlurCep = (e, setFieldValue) => {
     const { value } = e.target;
 
     const cep = value?.replace(/[^0-9]/g, "");
@@ -21,7 +22,23 @@ class CadastroCliente extends React.Component {
 
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        setFieldValue("logradouro", data.logradouro);
+        setFieldValue("bairro", data.bairro);
+        setFieldValue("cidade", data.localidade);
+      });
+  };
+
+  validate = (values) => {
+    const errors = {};
+    if (!values.name) {
+      errors.name = "Nome é obrigatório";
+    }
+    if (!values.telefone) {
+      errors.telefone = "Telefone é obrigatório";
+    }
+
+    return errors;
   };
 
   render() {
@@ -48,49 +65,63 @@ class CadastroCliente extends React.Component {
         </header>
 
         <main>
-          <form action="/">
-            <div>
-              <div>
-                <label htmlFor="nome-cliente">Nome: </label>
-                <input
-                  type="text"
-                  id="nome-cliente"
-                  name="nome-cliente"
-                  size="50"
-                />
-              </div>
-              <div>
-                <label htmlFor="telefone">Telefone: </label>
-                <input type="number" id="telefone" name="telefone" />
-              </div>
-            </div>
+          <Formik
+            // validate={this.validate}
+            onSubmit={this.onSubmit}
+            // validateOnMount
+            initialValues={{
+              name: "",
+              telefone: "",
+            }}
+            render={({ values, errors, setFieldValue }) => (
+              <Form>
+                <div>
+                  <div>
+                    <label htmlFor="name">Nome: </label>
+                    <Field type="text" id="name" name="name" size="50" />
+                    {errors.name && <span>{errors.name}</span>}
+                  </div>
+                  <div>
+                    <label htmlFor="telefone">Telefone: </label>
+                    <Field type="number" id="telefone" name="telefone" />
+                    {errors.telefone && <span>{errors.telefone}</span>}
+                  </div>
+                </div>
 
-            <div>
-              <label htmlFor="cep">Cep: </label>
-              <input
-                type="text"
-                id="cep"
-                name="cep"
-                maxLength="9"
-                onBlur={this.onBlurCep}
-              />
-            </div>
-            <div>
-              <label htmlFor="logradouro">Logradouro: </label>
-              <input type="text" id="logradouro" name="logradouro" size="50" />
-            </div>
+                <div>
+                  <label htmlFor="cep">Cep: </label>
+                  <Field
+                    type="text"
+                    id="cep"
+                    name="cep"
+                    maxLength="9"
+                    onBlur={(e) => this.onBlurCep(e, setFieldValue)}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="logradouro">Logradouro: </label>
+                  <Field
+                    type="text"
+                    id="logradouro"
+                    name="logradouro"
+                    size="50"
+                  />
+                </div>
 
-            <div>
-              <label htmlFor="bairro">Bairro: </label>
-              <input type="text" id="bairro" name="bairro" size="40" />
-              <label htmlFor="localidade">Cidade: </label>
-              <input type="text" id="localidade" name="localidade" size="40" />
-            </div>
-            <div>
-              <label htmlFor="obs">Observações: </label>
-              <textarea name="obs" cols="50" rows="3"></textarea>
-            </div>
-          </form>
+                <div>
+                  <label htmlFor="bairro">Bairro: </label>
+                  <Field type="text" id="bairro" name="bairro" size="40" />
+                  <label htmlFor="cidade">Cidade: </label>
+                  <Field type="text" id="localidade" name="cidade" size="40" />
+                </div>
+                <div>
+                  <label htmlFor="obs">Observações: </label>
+                  <textarea name="obs" cols="50" rows="3"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+              </Form>
+            )}
+          />
         </main>
       </div>
     );
