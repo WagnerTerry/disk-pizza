@@ -31,11 +31,23 @@ class CadastroCliente extends React.Component {
 
   validate = (values) => {
     const errors = {};
-    if (!values.name) {
-      errors.name = "Nome é obrigatório";
+    if (!values.nome) {
+      errors.nome = "Nome é obrigatório";
     }
     if (!values.telefone) {
       errors.telefone = "Telefone é obrigatório";
+    }
+    if (!values.cep) {
+      errors.cep = "Cep é obrigatório";
+    }
+    if (!values.logradouro) {
+      errors.telefone = "Logradouro é obrigatório";
+    }
+    if (!values.bairro) {
+      errors.bairro = "Bairro é obrigatório";
+    }
+    if (!values.cidade) {
+      errors.cidade = "Cidade obrigatório";
     }
 
     return errors;
@@ -73,55 +85,64 @@ class CadastroCliente extends React.Component {
               name: "",
               telefone: "",
             }}
-            render={({ values, errors, setFieldValue }) => (
-              <Form>
-                <div>
+          >
+            {(props) => {
+              const { errors, setFieldValue } = props;
+              return (
+                <Form>
                   <div>
-                    <label htmlFor="name">Nome: </label>
-                    <Field type="text" id="name" name="name" size="50" />
-                    {errors.name && <span>{errors.name}</span>}
+                    <div>
+                      <label htmlFor="nome">Nome: </label>
+                      <Field type="text" id="nome" name="nome" size="50" />
+                      {errors.nome && <span>{errors.nome}</span>}
+                    </div>
+                    <div>
+                      <label htmlFor="telefone">Telefone: </label>
+                      <Field type="number" id="telefone" name="telefone" />
+                      {errors.telefone && <span>{errors.telefone}</span>}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="cep">Cep: </label>
+                    <Field
+                      type="text"
+                      id="cep"
+                      name="cep"
+                      maxLength="9"
+                      onBlur={(e) => this.onBlurCep(e, setFieldValue)}
+                    />
                   </div>
                   <div>
-                    <label htmlFor="telefone">Telefone: </label>
-                    <Field type="number" id="telefone" name="telefone" />
-                    {errors.telefone && <span>{errors.telefone}</span>}
+                    <label htmlFor="logradouro">Logradouro: </label>
+                    <Field
+                      type="text"
+                      id="logradouro"
+                      name="logradouro"
+                      size="50"
+                    />
                   </div>
-                </div>
 
-                <div>
-                  <label htmlFor="cep">Cep: </label>
-                  <Field
-                    type="text"
-                    id="cep"
-                    name="cep"
-                    maxLength="9"
-                    onBlur={(e) => this.onBlurCep(e, setFieldValue)}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="logradouro">Logradouro: </label>
-                  <Field
-                    type="text"
-                    id="logradouro"
-                    name="logradouro"
-                    size="50"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="bairro">Bairro: </label>
-                  <Field type="text" id="bairro" name="bairro" size="40" />
-                  <label htmlFor="cidade">Cidade: </label>
-                  <Field type="text" id="localidade" name="cidade" size="40" />
-                </div>
-                <div>
-                  <label htmlFor="obs">Observações: </label>
-                  <textarea name="obs" cols="50" rows="3"></textarea>
-                </div>
-                <button type="submit">Enviar</button>
-              </Form>
-            )}
-          />
+                  <div>
+                    <label htmlFor="bairro">Bairro: </label>
+                    <Field type="text" id="bairro" name="bairro" size="40" />
+                    <label htmlFor="cidade">Cidade: </label>
+                    <Field
+                      type="text"
+                      id="localidade"
+                      name="cidade"
+                      size="40"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="obs">Observações: </label>
+                    <textarea name="obs" cols="50" rows="3"></textarea>
+                  </div>
+                  <button type="submit">Enviar</button>
+                </Form>
+              );
+            }}
+          </Formik>
         </main>
       </div>
     );
