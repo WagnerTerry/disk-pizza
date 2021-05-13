@@ -12,6 +12,7 @@ yarn add sqlite3
 yarn add uuid
 yarn add @types/uuid -D
 yarn add axios
+yarn add formik
 
 yarn tsc --init
 gerar o arquivo tsconfig.json e dentro dele{
