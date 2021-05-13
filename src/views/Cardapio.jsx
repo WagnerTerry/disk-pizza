@@ -27,10 +27,6 @@ class Cardapio extends React.Component {
       refrigerantes: refrigerantes,
     });
     console.log("tes", response.data);
-
-    /*   pizzas[0].tradicionais[0].sabores.map((piz) => {
-      return <h2>{console.log("asa",piz.nome, piz.codigo_pizza)}</h2>
-    }) */
   };
 
   componentDidMount = () => {
@@ -38,11 +34,9 @@ class Cardapio extends React.Component {
   };
 
   render() {
-    // const grupos = this.state.pizzas.filter((g) => g.grupo === "ESPECIAIS");
     return (
       <div id={"cardapio"}>
-        <h1>Cardapio</h1>
-        <h2>Pizzas</h2>
+        <strong>Pizzas</strong>
 
         {this.state.grupos.map((grupo, i) => {
           return (
@@ -65,27 +59,6 @@ class Cardapio extends React.Component {
             </div>
           );
         })}
-
-        {/* <h2>Tradicionais </h2>
-        {this.state.pizzas.map((pizza) => {
-          return (
-            pizza.grupo === "TRADICIONAIS" && (
-              <div key={pizza.codigo_pizza}>
-                <h3>{pizza.nome}</h3>
-              </div>
-            )
-          );
-        })}
-        <h2>Classicas</h2>
-        {this.state.pizzas.map((pizza) => {
-          return (
-            pizza.grupo === "CLASSICAS" && (
-              <div key={pizza.codigo_pizza}>
-                <h3>{pizza.nome}</h3>
-              </div>
-            )
-          );
-        })} */}
 
         <h2>Refrigerante Grátis</h2>
         {this.state.refrigerantes.map((refri) => {

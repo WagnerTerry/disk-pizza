@@ -1,11 +1,20 @@
 #cardapio {
-  padding: 50px;
+  padding: 40px 80px;
 
   h1 {
-    background-color: yellow;
+    background-color: blue;
   }
 
   h2 {
     background-color: silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+
+  strong {
+    font-size: 32px;
+    text-decoration: underline;
   }
 }
