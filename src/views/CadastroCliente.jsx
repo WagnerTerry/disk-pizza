@@ -87,18 +87,31 @@ class CadastroCliente extends React.Component {
             }}
           >
             {(props) => {
-              const { errors, setFieldValue } = props;
+              const { values, errors, setFieldValue, handleChange } = props;
               return (
                 <Form>
                   <div>
                     <div>
                       <label htmlFor="nome">Nome: </label>
-                      <Field type="text" id="nome" name="nome" size="50" />
+                      <Field
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        size="50"
+                        value={values.nome || ""}
+                        onChange={handleChange}
+                      />
                       {errors.nome && <span>{errors.nome}</span>}
                     </div>
                     <div>
                       <label htmlFor="telefone">Telefone: </label>
-                      <Field type="number" id="telefone" name="telefone" />
+                      <Field
+                        type="number"
+                        id="telefone"
+                        name="telefone"
+                        value={values.telefone || ""}
+                        onChange={handleChange}
+                      />
                       {errors.telefone && <span>{errors.telefone}</span>}
                     </div>
                   </div>
@@ -110,7 +123,9 @@ class CadastroCliente extends React.Component {
                       id="cep"
                       name="cep"
                       maxLength="9"
+                      value={values.cep || ""}
                       onBlur={(e) => this.onBlurCep(e, setFieldValue)}
+                      onChange={handleChange}
                     />
                   </div>
                   <div>
@@ -119,19 +134,30 @@ class CadastroCliente extends React.Component {
                       type="text"
                       id="logradouro"
                       name="logradouro"
+                      value={values.logradouro || ""}
                       size="50"
+                      onChange={handleChange}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="bairro">Bairro: </label>
-                    <Field type="text" id="bairro" name="bairro" size="40" />
+                    <Field
+                      type="text"
+                      id="bairro"
+                      name="bairro"
+                      size="40"
+                      value={values.bairro || ""}
+                      onChange={handleChange}
+                    />
                     <label htmlFor="cidade">Cidade: </label>
                     <Field
                       type="text"
                       id="localidade"
                       name="cidade"
                       size="40"
+                      value={values.cidade || ""}
+                      onChange={handleChange}
                     />
                   </div>
                   <div>
