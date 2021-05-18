@@ -81,10 +81,12 @@ class CadastroCliente extends React.Component {
             // validate={this.validate}
             onSubmit={this.onSubmit}
             // validateOnMount
-            initialValues={{
-              name: "",
-              telefone: "",
-            }}
+            initialValues={
+              {
+                // name: "",
+                // telefone: "",
+              }
+            }
           >
             {(props) => {
               const { values, errors, setFieldValue, handleChange } = props;
