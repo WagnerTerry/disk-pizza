@@ -26,7 +26,7 @@ function App() {
 }
 
 const Home = () => (
-  <div>
+  <div className="home">
     <h1>DISK PIZZA CALIFÓRNIA</h1>
     <img src={Logo} alt="logo" className="logo" />
   </div>

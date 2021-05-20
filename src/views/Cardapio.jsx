@@ -36,12 +36,12 @@ class Cardapio extends React.Component {
   render() {
     return (
       <div id={"cardapio"}>
-        <strong>Pizzas</strong>
+        <h2>Pizzas</h2>
 
         {this.state.grupos.map((grupo, i) => {
           return (
             <div key={i}>
-              <h2>{grupo.grupo} </h2>
+              <strong>{grupo.grupo} </strong>
               {this.state.pizzas.map((pizza, a) => {
                 return (
                   <div key={a}>
@@ -60,7 +60,7 @@ class Cardapio extends React.Component {
           );
         })}
 
-        <h2>Refrigerante Grátis</h2>
+        <strong>Refrigerante Grátis</strong>
         {this.state.refrigerantes.map((refri) => {
           return (
             <h3 key={refri.codigo_refri}>

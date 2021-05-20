@@ -1,20 +1,22 @@
 #cardapio {
-  padding: 40px 80px;
+  padding: 0px 80px;
 
   h1 {
     background-color: blue;
   }
 
-  h2 {
+  strong {
+    font-size: 22px;
+    text-decoration: underline;
     background-color: silver;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
   }
-
-  strong {
-    font-size: 32px;
-    text-decoration: underline;
-  }
 }
+
+// @media (max-width: 400px) {
+//   #cardapio {
+//   }
+// }

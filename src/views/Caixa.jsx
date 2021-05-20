@@ -6,7 +6,7 @@ class Caixa extends React.Component {
   // }
 
   render() {
-    return <div>Caixa</div>;
+    return <h2>Caixa</h2>;
   }
 }
 

@@ -6,7 +6,10 @@ function Nav() {
   return (
     <nav>
       <Link className="navLogo" to="/">
-        <h3>Disk Pizza Califórnia</h3>
+        <strong>
+          <br />
+          Disk Pizza Califórnia
+        </strong>
       </Link>
       <ul className="nav-links">
         <Link className="navStyle" to="/cadastrocliente">
