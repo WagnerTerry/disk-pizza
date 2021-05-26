@@ -5,11 +5,9 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <nav>
+      <br />
       <Link className="navLogo" to="/">
-        <strong>
-          <br />
-          Disk Pizza Califórnia
-        </strong>
+        <span>Disk Pizza Califórnia</span>
       </Link>
       <ul className="nav-links">
         <Link className="navStyle" to="/cadastrocliente">

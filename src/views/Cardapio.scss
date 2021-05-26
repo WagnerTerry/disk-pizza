@@ -14,6 +14,14 @@
     align-items: center;
     height: 50px;
   }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 40px;
+  }
 }
 
 // @media (max-width: 400px) {
