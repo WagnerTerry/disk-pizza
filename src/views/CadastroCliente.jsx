@@ -59,11 +59,11 @@ class CadastroCliente extends React.Component {
         <h2>Cadastro de Clientes</h2>
 
         <header>
-          <div>
+          <div className={"cod-cliente"}>
             <label htmlFor="cod-cliente">Código do Cliente: </label>
             <input type="text" id="cod-cliente" name="cod-cliente" size="5" />
           </div>
-          <div>
+          <div className={"button-options"}>
             {" "}
             <button>Buscar</button>
             <button>Limpar</button>
