@@ -93,29 +93,26 @@ class CadastroCliente extends React.Component {
               return (
                 <Form>
                   <div>
-                    <div>
-                      <label htmlFor="nome">Nome: </label>
-                      <Field
-                        type="text"
-                        id="nome"
-                        name="nome"
-                        size="50"
-                        value={values.nome || ""}
-                        onChange={handleChange}
-                      />
-                      {errors.nome && <span>{errors.nome}</span>}
-                    </div>
-                    <div>
-                      <label htmlFor="telefone">Telefone: </label>
-                      <Field
-                        type="number"
-                        id="telefone"
-                        name="telefone"
-                        value={values.telefone || ""}
-                        onChange={handleChange}
-                      />
-                      {errors.telefone && <span>{errors.telefone}</span>}
-                    </div>
+                    <label htmlFor="nome">Nome: </label>
+                    <Field
+                      type="text"
+                      id="nome"
+                      name="nome"
+                      size="50"
+                      value={values.nome || ""}
+                      onChange={handleChange}
+                    />
+                    {errors.nome && <span>{errors.nome}</span>}
+
+                    <label htmlFor="telefone">Telefone: </label>
+                    <Field
+                      type="number"
+                      id="telefone"
+                      name="telefone"
+                      value={values.telefone || ""}
+                      onChange={handleChange}
+                    />
+                    {errors.telefone && <span>{errors.telefone}</span>}
                   </div>
 
                   <div>
